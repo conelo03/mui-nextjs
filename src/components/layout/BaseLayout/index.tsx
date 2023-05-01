@@ -15,6 +15,9 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from '../../layout/BaseLayout/ListItems';
 import HeaderTitle from '../../HeaderTitle';
+import { Menu, MenuItem } from '@mui/material';
+import { AccountCircle } from '@mui/icons-material';
+import { useRouter } from 'next/router';
 
 const drawerWidth: number = 240;
 
@@ -75,9 +78,20 @@ interface BaseLayoutType {
 
 const BaseLayout = (props: BaseLayoutType) => {
   const { children, title } = props
+  const router = useRouter()
   const [open, setOpen] = useState(true)
   const toggleDrawer = () => {
     setOpen(!open)
+  }
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
+  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
   }
 
   return (
@@ -117,6 +131,37 @@ const BaseLayout = (props: BaseLayoutType) => {
                 <NotificationsIcon />
               </Badge>
             </IconButton>
+            <div>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={handleMenu}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
+              <Menu
+                id="menu-appbar"
+                anchorEl={anchorEl}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'right',
+                }}
+                open={Boolean(anchorEl)}
+                onClose={handleClose}
+              >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={() => router.push('/auth/sign-in')}>Log Out</MenuItem>
+              </Menu>
+            </div>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
