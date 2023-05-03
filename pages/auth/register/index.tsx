@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
-import BaseContainer from '@/src/components/layout/Container';
+import BaseContainer from '@components/layout/Container';
 
 const SignUp = () => {
   const router = useRouter()

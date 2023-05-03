@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Dashboard from '@/src/components/pages/Dashboard/Dashboard';
+import Dashboard from '@components/pages/Dashboard/Dashboard';
 
 const DashboardPage = () => {
   return <Dashboard />
