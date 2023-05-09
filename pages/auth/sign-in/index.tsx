@@ -11,16 +11,34 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
 import BaseContainer from '@components/layout/Container';
+import usePostEmailLogin from 'services/auth/mutations/usePostEmailLogin.service';
+import apiClient from 'services/apis';
+import { apiResponseSuccess } from 'lib/helper';
 
 const SignIn = () => {
   const router = useRouter()
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    })
+    try {
+      const body = {
+        identifier: data.get('identifier') ?? '',
+        password: data.get('password') ?? '',
+      }
+      const response = await apiClient.post('/auth/local', body)
+      if (apiResponseSuccess(response?.status)) {
+        const auth = response?.data
+        localStorage.setItem('auth', JSON.stringify(auth))
+        const authStorage = localStorage.getItem('auth') ?? null
+        const parsedAuthStorage = authStorage ? JSON.parse(authStorage) : null
+        console.log(parsedAuthStorage)
+        router.replace('/dashboard')
+      } else {
+        console.error(response)
+      }
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
@@ -36,9 +54,9 @@ const SignIn = () => {
           margin="normal"
           required
           fullWidth
-          id="email"
+          id="identifier"
           label="Email Address"
-          name="email"
+          name="identifier"
           autoComplete="email"
           autoFocus
         />
@@ -57,7 +75,6 @@ const SignIn = () => {
           label="Remember me"
         />
         <Button
-          onClick={() => router.push('/dashboard')}
           type="submit"
           fullWidth
           variant="contained"

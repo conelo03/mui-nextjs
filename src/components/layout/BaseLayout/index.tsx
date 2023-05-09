@@ -159,7 +159,14 @@ const BaseLayout = (props: BaseLayoutType) => {
               >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={() => router.push('/auth/sign-in')}>Log Out</MenuItem>
+                <MenuItem 
+                  onClick={() => {
+                    localStorage.removeItem('auth')
+                    router.replace('/auth/sign-in')
+                  }}
+                >
+                  Log Out
+                </MenuItem>
               </Menu>
             </div>
           </Toolbar>
