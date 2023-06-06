@@ -9,6 +9,8 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
+import { DeleteOutlineOutlined, PictureAsPdfRounded } from '@mui/icons-material';
+import { SpeedDialIcon } from '@mui/material';
 
 export const mainListItems = (
   <React.Fragment>
@@ -18,9 +20,15 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
+    <ListItemButton href={'/trash'}>
+      <ListItemIcon>
+        <DeleteOutlineOutlined />
+      </ListItemIcon>
+      <ListItemText primary="Trash" />
+    </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
-        <ShoppingCartIcon />
+        <SpeedDialIcon />
       </ListItemIcon>
       <ListItemText primary="Orders" />
     </ListItemButton>
