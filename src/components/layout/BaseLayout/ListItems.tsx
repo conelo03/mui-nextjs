@@ -9,7 +9,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import { DeleteOutlineOutlined, PictureAsPdfRounded } from '@mui/icons-material';
+import { AppRegistration, DeleteOutlineOutlined, MonetizationOn, MoneyOff, PictureAsPdfRounded } from '@mui/icons-material';
 import { SpeedDialIcon } from '@mui/material';
 
 export const mainListItems = (
@@ -24,31 +24,55 @@ export const mainListItems = (
       <ListItemIcon>
         <DeleteOutlineOutlined />
       </ListItemIcon>
-      <ListItemText primary="Trash" />
+      <ListItemText primary="Data Sampah" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href={'/auction'}>
       <ListItemIcon>
-        <SpeedDialIcon />
+        <DeleteOutlineOutlined />
       </ListItemIcon>
-      <ListItemText primary="Orders" />
+      <ListItemText primary="Lelang Sampah" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href={'/schedule'}>
+      <ListItemIcon>
+        <AppRegistration />
+      </ListItemIcon>
+      <ListItemText primary="Jadwal" />
+    </ListItemButton>
+    <ListItemButton href={'/official'}>
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Customers" />
+      <ListItemText primary="Master Pegawai" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href={'/customer'}>
+      <ListItemIcon>
+        <PeopleIcon />
+      </ListItemIcon>
+      <ListItemText primary="Master Nasabah" />
+    </ListItemButton>
+    <ListItemButton href={'/collector'}>
+      <ListItemIcon>
+        <PeopleIcon />
+      </ListItemIcon>
+      <ListItemText primary="Master Pengepul" />
+    </ListItemButton>
+    <ListItemButton href={'/customerBalanced'}>
+      <ListItemIcon>
+        <MonetizationOn />
+      </ListItemIcon>
+      <ListItemText primary="Penarikan Saldo" />
+    </ListItemButton>
+    <ListItemButton href={'/transactionReports'}>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Reports" />
+      <ListItemText primary="Laporan Transaksi" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton href={'/auctionReports'}>
       <ListItemIcon>
-        <LayersIcon />
+        <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Integrations" />
+      <ListItemText primary="Laporan Lelang" />
     </ListItemButton>
   </React.Fragment>
 );
@@ -56,25 +80,13 @@ export const mainListItems = (
 export const secondaryListItems = (
   <React.Fragment>
     <ListSubheader component="div" inset>
-      Saved reports
-    </ListSubheader>
-    <ListItemButton>
+    Report Completed
+    </ListSubheader >
+    <ListItemButton href={'/reportsComplete'}>
       <ListItemIcon>
         <AssignmentIcon />
       </ListItemIcon>
-      <ListItemText primary="Current month" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Last quarter" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Year-end sale" />
+      <ListItemText primary="Laporan Selesai" />
     </ListItemButton>
   </React.Fragment>
 );

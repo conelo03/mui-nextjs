@@ -23,10 +23,12 @@ const Dashboard = () => {
 
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'nama', headerName: 'Nama Sampah', width: 190 },
-    { field: 'harga', headerName: 'Harga Sampah', width: 190 },
-    { field: 'stok', headerName: 'Stok Sampah', width: 190 }, 
-    { field: 'gambar', headerName: 'Gambar', width: 190 },
+    { field: 'nama', headerName: 'Nama Lelang', width: 190 },
+    { field: 'start', headerName: 'Waktu Mulai', width: 190 },
+    { field: 'finish', headerName: 'Waktu Selesai', width: 190 }, 
+    { field: 'multiple', headerName: 'Minimum Bid', width: 190 },
+    { field: 'minimum', headerName: 'Kelipatan Bid', width: 190 },
+    { field: 'keterangan', headerName: 'Keterangan', width: 190 },
     {
       field: 'action',
       headerName: 'Aksi',
@@ -65,11 +67,11 @@ const Dashboard = () => {
             <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
               <Box sx={{ flexGrow: 1 }} marginBottom={'20'}>
                 <Grid container spacing={2}>
-                  <Grid item xs={6} md={6}>
-                    <Title>Kelola Sampah</Title>
+                  <Grid item xs={12} md={6}>
+                    <Title>Kelola Lelang Room</Title>
                   </Grid>
-                  <Grid item xs={6} md={6} alignContent={'end'}>
-                      <Button href="/trash/new" variant="contained" sx={{float: 'right'}}>
+                  <Grid item xs={12} md={6} alignContent={'end'}>
+                      <Button href="/auction/new" variant="contained" sx={{float: 'right'}}>
                         Tambah Data
                       </Button>
                   </Grid>

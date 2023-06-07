@@ -4,12 +4,13 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import BaseLayout from '@components/layout/BaseLayout';
 import Copyright from '@components/Copyright';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import Title from '@components/pages/Dashboard/Title';
-import { AddOutlined, DeleteOutline, EditOutlined } from '@mui/icons-material';
+import { DeleteOutline, EditOutlined, RowingSharp } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Link } from '@mui/material';
-import router from 'next/router';
+import { Box, Button, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
+
+const Dashboard = () => {
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -19,14 +20,12 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const Dashboard = () => {
-
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'nama', headerName: 'Nama Sampah', width: 190 },
-    { field: 'harga', headerName: 'Harga Sampah', width: 190 },
-    { field: 'stok', headerName: 'Stok Sampah', width: 190 }, 
-    { field: 'gambar', headerName: 'Gambar', width: 190 },
+    { field: 'date', headerName: 'Tanggal', width: 190 },
+    { field: 'name', headerName: 'Nama Sampah', width: 190 },
+    { field: 'heavy', headerName: 'Berat Sampah', width: 190 },
+    { field: 'total', headerName: 'Total', width: 190 },
     {
       field: 'action',
       headerName: 'Aksi',
@@ -45,15 +44,15 @@ const Dashboard = () => {
   ];
       
   const rows = [
-    { id: 1, nama: 'Snow', harga: 'Jon', stok: 'subang', gambar: ' ' },
-    { id: 2, nama: 'Lannister', harga: 'Cersei', stok: 'subang', gambar: ' '},
-    { id: 3, nama: 'Lannister', harga: 'Jaime', stok: 'subang', gambar: ' '},
-    { id: 4, nama: 'Stark', harga: 'Arya', stok: 'subang', gambar: ' '},
-    { id: 5, nama: 'Targaryen', harga: 'Daenerys',stok: 'subang', gambar: ' '},
-    { id: 6, nama: 'Melisandre', harga: null,stok: 'subang', gambar: ' '},
-    { id: 7, nama: 'Clifford', harga: 'Ferrara', stok: 'subang', gambar: ' '},
-    { id: 8, nama: 'Frances', harga: 'Rossini',stok: 'subang', gambar: ' '},
-    { id: 9, nama: 'Roxie', harga: 'Harvey', stok: 'subang', gambar: ' ' },
+    { id: 1, date: 'Snow', name: 'Jon@email.com', heavy:'', total:''},
+    { id: 2, date: 'Lannister', name: 'Cersei@email.com', heavy:'', total:''},
+    { id: 3, date: 'Lannister', name: 'Jaime@email.com', heavy:'', total:'' },
+    { id: 4, date: 'Stark', name: 'Arya@email.com', heavy: '', total:''},
+    { id: 5, date: 'Targaryen', name: 'Daenerys@email.com', heavy:'', total:''},
+    { id: 6, date: 'Melisandre', name: 'Pikki@email.com', heavy:'', total:''},
+    { id: 7, date: 'Clifford', name: 'Ferrara@email.com', heavy:'', total:''},
+    { id: 8, date: 'Frances', name: 'Rossini@email.com', heavy:'', total:' '},
+    { id: 9, date: 'Roxie', name: 'Harvey@email.com', heavy: '', total: ''},
   ];
 
   return (
@@ -66,11 +65,11 @@ const Dashboard = () => {
               <Box sx={{ flexGrow: 1 }} marginBottom={'20'}>
                 <Grid container spacing={2}>
                   <Grid item xs={6} md={6}>
-                    <Title>Kelola Sampah</Title>
+                    <Title>Laporan Transaksi</Title>
                   </Grid>
                   <Grid item xs={6} md={6} alignContent={'end'}>
                       <Button href="/trash/new" variant="contained" sx={{float: 'right'}}>
-                        Tambah Data
+                        Buat Laporan
                       </Button>
                   </Grid>
                 </Grid>
@@ -84,7 +83,7 @@ const Dashboard = () => {
                     },
                 }}
                 pageSizeOptions={[5, 10]}
-                checkboxSelection={false}
+                checkboxSelection={true}
               />
             </Paper>
           </Grid>

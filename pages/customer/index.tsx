@@ -4,12 +4,11 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import BaseLayout from '@components/layout/BaseLayout';
 import Copyright from '@components/Copyright';
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import Title from '@components/pages/Dashboard/Title';
-import { AddOutlined, DeleteOutline, EditOutlined } from '@mui/icons-material';
+import { DeleteOutline, EditOutlined } from '@mui/icons-material';
 import { styled } from '@mui/material/styles';
-import { Box, Button, Link } from '@mui/material';
-import router from 'next/router';
+import { Box, Button } from '@mui/material';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -23,10 +22,10 @@ const Dashboard = () => {
 
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'nama', headerName: 'Nama Sampah', width: 190 },
-    { field: 'harga', headerName: 'Harga Sampah', width: 190 },
-    { field: 'stok', headerName: 'Stok Sampah', width: 190 }, 
-    { field: 'gambar', headerName: 'Gambar', width: 190 },
+    { field: 'name', headerName: 'Nama Nasabah', width: 190 },
+    { field: 'email', headerName: 'Email', width: 150 },
+    { field: 'noTelp', headerName: 'Nomor Handphone', width: 190 },
+    { field: 'address', headerName: 'Alamat', width: 190 },
     {
       field: 'action',
       headerName: 'Aksi',
@@ -45,15 +44,15 @@ const Dashboard = () => {
   ];
       
   const rows = [
-    { id: 1, nama: 'Snow', harga: 'Jon', stok: 'subang', gambar: ' ' },
-    { id: 2, nama: 'Lannister', harga: 'Cersei', stok: 'subang', gambar: ' '},
-    { id: 3, nama: 'Lannister', harga: 'Jaime', stok: 'subang', gambar: ' '},
-    { id: 4, nama: 'Stark', harga: 'Arya', stok: 'subang', gambar: ' '},
-    { id: 5, nama: 'Targaryen', harga: 'Daenerys',stok: 'subang', gambar: ' '},
-    { id: 6, nama: 'Melisandre', harga: null,stok: 'subang', gambar: ' '},
-    { id: 7, nama: 'Clifford', harga: 'Ferrara', stok: 'subang', gambar: ' '},
-    { id: 8, nama: 'Frances', harga: 'Rossini',stok: 'subang', gambar: ' '},
-    { id: 9, nama: 'Roxie', harga: 'Harvey', stok: 'subang', gambar: ' ' },
+    { id: 1, name: 'Snow', email: 'Jon@email.com', noTelp:'', address:''},
+    { id: 2, name: 'Lannister', email: 'Cersei@email.com', noTelp:'', address:''},
+    { id: 3, name: 'Lannister', email: 'Jaime@email.com', noTelp:'', address:'' },
+    { id: 4, name: 'Stark', email: 'Arya@email.com', noTelp: '', address:''},
+    { id: 5, name: 'Targaryen', email: 'Daenerys@email.com', noTelp:'', address:''},
+    { id: 6, name: 'Melisandre', email: 'Pikki@email.com', noTelp:'', address:''},
+    { id: 7, name: 'Clifford', email: 'Ferrara@email.com', noTelp:'', address:''},
+    { id: 8, name: 'Frances', email: 'Rossini@email.com', noTelp:'', address:' '},
+    { id: 9, name: 'Roxie', email: 'Harvey@email.com', noTelp: '', address: ''},
   ];
 
   return (
@@ -66,7 +65,7 @@ const Dashboard = () => {
               <Box sx={{ flexGrow: 1 }} marginBottom={'20'}>
                 <Grid container spacing={2}>
                   <Grid item xs={6} md={6}>
-                    <Title>Kelola Sampah</Title>
+                    <Title>Master Nasabah</Title>
                   </Grid>
                   <Grid item xs={6} md={6} alignContent={'end'}>
                       <Button href="/trash/new" variant="contained" sx={{float: 'right'}}>

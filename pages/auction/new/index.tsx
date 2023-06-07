@@ -12,7 +12,7 @@ const New = () => {
   return (
     <BaseContainer title={'Tambah Data'}>
       <Typography component="h1" variant="h5">
-        Tambah Data Sampah
+        Tambah Data Lelang Room
       </Typography>
       <Box component="form" >
         <Grid container spacing={2}>
@@ -22,7 +22,7 @@ const New = () => {
               fullWidth
               required
               id="TrashName"
-              label="Nama Sampah"
+              label="Nama Lelang"
               autoComplete="price"
             />
           </Grid>
@@ -31,20 +31,48 @@ const New = () => {
               required
               fullWidth
               id="Price"
-              label="Harga Sampah"
+              label="Waktu Mulai"
               name="Trash Price"
               autoComplete="price"
             />
           </Grid>
-          <Grid item xs={12} sm={12}> 
-            <TextField 
-              type="file"
+          <Grid item xs={12} >
+            <TextField
               required
               fullWidth
-              id="Upload"
-              label=" "
-              name="Upload"
-              autoComplete="Upload"
+              id="Price"
+              label="Waktu Selesai"
+              name="Trash Price"
+              autoComplete="price"
+            />
+          </Grid>
+          <Grid item xs={12} >
+            <TextField
+              required
+              fullWidth
+              id="Price"
+              label="Minimum Bid"
+              name="Trash Price"
+              autoComplete="price"
+            />
+          </Grid>
+          <Grid item xs={12} >
+            <TextField
+              required
+              fullWidth
+              id="Price"
+              label="Kelipatan Bid"
+              name="Trash Price"
+              autoComplete="price"
+            />
+          </Grid>
+          <Grid item xs={12} >
+            <TextField
+              fullWidth
+              id="Price"
+              label="Keterangan"
+              name="Trash Price"
+              autoComplete="price"
             />
           </Grid>
         </Grid>
