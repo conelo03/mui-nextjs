@@ -82,5 +82,17 @@ export const secondaryListItems = (
       </ListItemIcon>
       <ListItemText primary="Laporan Selesai" />
     </ListItemButton>
+    <ListItemButton href={'/confirmReport'}>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Konfirmasi Laporan" />
+    </ListItemButton>
+    <ListItemButton href={'/acceptReport'}>
+      <ListItemIcon>
+        <AssignmentIcon />
+      </ListItemIcon>
+      <ListItemText primary="Terima Laporan" />
+    </ListItemButton>
   </React.Fragment>
 );
