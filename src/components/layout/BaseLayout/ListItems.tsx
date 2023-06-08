@@ -20,6 +20,12 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
+    <ListItemButton href={'/customerBalance'}>
+      <ListItemIcon>
+        <MonetizationOn />
+      </ListItemIcon>
+      <ListItemText primary="Penarikan Saldo" />
+    </ListItemButton>
     <ListItemButton href={'/trash'}>
       <ListItemIcon>
         <DeleteOutlineOutlined />
@@ -56,23 +62,11 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Master Pengepul" />
     </ListItemButton>
-    <ListItemButton href={'/customerBalanced'}>
-      <ListItemIcon>
-        <MonetizationOn />
-      </ListItemIcon>
-      <ListItemText primary="Penarikan Saldo" />
-    </ListItemButton>
     <ListItemButton href={'/transactionReports'}>
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Laporan Transaksi" />
-    </ListItemButton>
-    <ListItemButton href={'/auctionReports'}>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Laporan Lelang" />
+      <ListItemText primary="Laporan" />
     </ListItemButton>
   </React.Fragment>
 );

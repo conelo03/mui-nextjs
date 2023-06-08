@@ -47,15 +47,15 @@ const Dashboard = () => {
   ];
       
   const rows = [
-    { id: 1, nama: 'Snow', harga: 'Jon', stok: 'subang', gambar: ' ' },
-    { id: 2, nama: 'Lannister', harga: 'Cersei', stok: 'subang', gambar: ' '},
-    { id: 3, nama: 'Lannister', harga: 'Jaime', stok: 'subang', gambar: ' '},
-    { id: 4, nama: 'Stark', harga: 'Arya', stok: 'subang', gambar: ' '},
-    { id: 5, nama: 'Targaryen', harga: 'Daenerys',stok: 'subang', gambar: ' '},
-    { id: 6, nama: 'Melisandre', harga: null,stok: 'subang', gambar: ' '},
-    { id: 7, nama: 'Clifford', harga: 'Ferrara', stok: 'subang', gambar: ' '},
-    { id: 8, nama: 'Frances', harga: 'Rossini',stok: 'subang', gambar: ' '},
-    { id: 9, nama: 'Roxie', harga: 'Harvey', stok: 'subang', gambar: ' ' },
+    { id: 1, nama: 'Plastik Bening', start: 'Friday, june 9, 2023 at 10:45 AM', finish: 'Saturday, june 10, 2023 at 10:45 AM', multiple: '500', minimum:'2000', keterangan:''},
+    { id: 2, nama: 'Botol Bening', start: 'Friday, june 9, 2023 at 11:45 AM', finish: 'Saturday, june 10, 2023 at 11:45 AM', multiple: '500', minimum:'3000', keterangan:''},
+    { id: 3, nama: 'Botol Warna', start: 'Friday, june 9, 2023 at 12:45 AM', finish: 'Saturday, june 10, 2023 at 12:45 AM', multiple: '500', minimum:'1000', keterangan:''},
+    { id: 4, nama: 'Tutup Galon', start: 'Friday, june 9, 2023 at 13:45 AM', finish: 'Saturday, june 10, 2023 at 13:45 AM', multiple: '500', minimum:'3500', keterangan:''},
+    { id: 5, nama: 'Gelas Plastik', start: 'Friday, june 9, 2023 at 14:45 AM',finish: 'Saturday, june 10, 2023 at 14:45 AM', multiple: '500', minimum:'5000', keterangan:''},
+    { id: 6, nama: 'Tutup Botol', start: 'Friday, june 9, 2023 at 10:45 AM',finish: 'Saturday, june 10, 2023 at 10:45 AM', multiple: '500', minimum:'2500', keterangan:''},
+    { id: 7, nama: 'Minyak Jelantah', start: 'Friday, june 9, 2023 at 11:45 AM', finish: 'Saturday, june 10, 2023 at 11:45 AM', multiple: '500', minimum:'4000', keterangan:''},
+    { id: 8, nama: 'Kardus Kering', start: 'Friday, june 9, 2023 at 12:45 AM',finish: 'Saturday, june 10, 2023 at 12:45 AM', multiple: '500', minimum:'2000', keterangan:''},
+    { id: 9, nama: 'Koran/Buku', start: 'Friday, june 9, 2023 at 13:45 AM', finish: 'Saturday, june 10, 2023 at 13:45 AM', multiple: '500', minimum:'1000', keterangan:''},
   ];
 
   return (

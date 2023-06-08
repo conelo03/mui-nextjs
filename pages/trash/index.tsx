@@ -24,8 +24,8 @@ const Dashboard = () => {
   const columns: GridColDef[] = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'nama', headerName: 'Nama Sampah', width: 190 },
-    { field: 'harga', headerName: 'Harga Sampah', width: 190 },
-    { field: 'stok', headerName: 'Stok Sampah', width: 190 }, 
+    { field: 'harga', headerName: 'Harga Sampah/KG', width: 190 },
+    { field: 'stok', headerName: 'Stok Sampah/KG', width: 190 }, 
     { field: 'gambar', headerName: 'Gambar', width: 190 },
     {
       field: 'action',
@@ -45,15 +45,15 @@ const Dashboard = () => {
   ];
       
   const rows = [
-    { id: 1, nama: 'Snow', harga: 'Jon', stok: 'subang', gambar: ' ' },
-    { id: 2, nama: 'Lannister', harga: 'Cersei', stok: 'subang', gambar: ' '},
-    { id: 3, nama: 'Lannister', harga: 'Jaime', stok: 'subang', gambar: ' '},
-    { id: 4, nama: 'Stark', harga: 'Arya', stok: 'subang', gambar: ' '},
-    { id: 5, nama: 'Targaryen', harga: 'Daenerys',stok: 'subang', gambar: ' '},
-    { id: 6, nama: 'Melisandre', harga: null,stok: 'subang', gambar: ' '},
-    { id: 7, nama: 'Clifford', harga: 'Ferrara', stok: 'subang', gambar: ' '},
-    { id: 8, nama: 'Frances', harga: 'Rossini',stok: 'subang', gambar: ' '},
-    { id: 9, nama: 'Roxie', harga: 'Harvey', stok: 'subang', gambar: ' ' },
+    { id: 1, nama: 'Plastik Campur', harga: '2000', stok: '2', gambar: ' ' },
+    { id: 2, nama: 'Botol Bening', harga: '3000', stok: '3', gambar: ' '},
+    { id: 3, nama: 'Botol Warna', harga: '1000', stok: '4', gambar: ' '},
+    { id: 4, nama: 'Tutup Galon', harga: '3500', stok: '2', gambar: ' '},
+    { id: 5, nama: 'Gelas Plastik', harga: '5000',stok: '5', gambar: ' '},
+    { id: 6, nama: 'Tutup Botol', harga: '2500',stok: '2', gambar: ' '},
+    { id: 7, nama: 'Minyak Jelantah', harga: '4000', stok: '6', gambar: ' '},
+    { id: 8, nama: 'Kardus Kering', harga: '2000',stok: '4', gambar: ' '},
+    { id: 9, nama: 'Koran/Buku', harga: '1000', stok: '12', gambar: ' ' },
   ];
 
   return (

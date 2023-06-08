@@ -46,15 +46,10 @@ const Dashboard = () => {
   ];
       
   const rows = [
-    { id: 1, name: 'Snow', role: 'Jon', idPeg: 'senin', email: '', noTelp:'', address:''},
-    { id: 2, name: 'Lannister', role: 'Cersei', idPeg: 'selasa', email: '', noTelp:'', address:''},
-    { id: 3, name: 'Lannister', role: 'Jaime', idPeg: 'selasa', email:'', noTelp:'', address:'' },
-    { id: 4, name: 'Stark', role: 'Arya', idPeg: 'kamis', email:'', noTelp: '', address:''},
-    { id: 5, name: 'Targaryen', role: 'Daenerys',idPeg: 'rabu', email: '', noTelp:'', address:''},
-    { id: 6, name: 'Melisandre', role: 'Pikki',idPeg: 'kamis', email: '', noTelp:'', address:''},
-    { id: 7, name: 'Clifford', role: 'Ferrara', idPeg: 'selasa',email: '', noTelp:'', address:''},
-    { id: 8, name: 'Frances', role: 'Rossini',idPeg: 'jumat', email: '', noTelp:'', address:' '},
-    { id: 9, name: 'Roxie', role: 'Harvey', idPeg: 'jumat', email: '', noTelp: '', address: ''},
+    { id: 1, name: 'Topik', role: 'Admin', idPeg: 'A001', email: 'Topik@email.com', noTelp:'0895340079534', address:'Subang'},
+    { id: 2, name: 'Hendriansyah', role: 'Direktur BSI', idPeg: 'A002', email: 'Hendriansyah@email.com', noTelp:'0895340079539', address:'Subang'},
+    { id: 3, name: 'Dewi', role: 'Kepala Dinas LH', idPeg: 'A003', email:'Dewi@email.com', noTelp:'0895340079532', address:'Subang' },
+    { id: 4, name: 'Oman', role: 'Petugas BSI', idPeg: 'A004', email:'Oman@email.com', noTelp: '0895340079533', address:'Subang'},
   ];
 
   return (
@@ -70,7 +65,7 @@ const Dashboard = () => {
                     <Title>Master Pegawai</Title>
                   </Grid>
                   <Grid item xs={6} md={6} alignContent={'end'}>
-                      <Button href="/trash/new" variant="contained" sx={{float: 'right'}}>
+                      <Button href="/official/new" variant="contained" sx={{float: 'right'}}>
                         Tambah Data
                       </Button>
                   </Grid>

@@ -44,15 +44,15 @@ const Dashboard = () => {
   ];
       
   const rows = [
-    { id: 1, name: 'Snow', email: 'Jon@email.com', noTelp:'', address:''},
-    { id: 2, name: 'Lannister', email: 'Cersei@email.com', noTelp:'', address:''},
-    { id: 3, name: 'Lannister', email: 'Jaime@email.com', noTelp:'', address:'' },
-    { id: 4, name: 'Stark', email: 'Arya@email.com', noTelp: '', address:''},
-    { id: 5, name: 'Targaryen', email: 'Daenerys@email.com', noTelp:'', address:''},
-    { id: 6, name: 'Melisandre', email: 'Pikki@email.com', noTelp:'', address:''},
-    { id: 7, name: 'Clifford', email: 'Ferrara@email.com', noTelp:'', address:''},
-    { id: 8, name: 'Frances', email: 'Rossini@email.com', noTelp:'', address:' '},
-    { id: 9, name: 'Roxie', email: 'Harvey@email.com', noTelp: '', address: ''},
+    { id: 1, name: 'Snow', email: 'Jon@email.com', noTelp:'0895340079534', address:'Subang'},
+    { id: 2, name: 'Lannister', email: 'Cersei@email.com', noTelp:'0895340079514', address:'Subang'},
+    { id: 3, name: 'Lannister', email: 'Jaime@email.com', noTelp:'0895340079534', address:'Subang' },
+    { id: 4, name: 'Stark', email: 'Arya@email.com', noTelp: '0895340079534', address:'Subang'},
+    { id: 5, name: 'Targaryen', email: 'Daenerys@email.com', noTelp:'0895340079534', address:'Subang'},
+    { id: 6, name: 'Melisandre', email: 'Pikki@email.com', noTelp:'0895340079534', address:'Subang'},
+    { id: 7, name: 'Clifford', email: 'Ferrara@email.com', noTelp:'0895340079534', address:'Subang'},
+    { id: 8, name: 'Frances', email: 'Rossini@email.com', noTelp:'0895340079534', address:'Subang'},
+    { id: 9, name: 'Roxie', email: 'Harvey@email.com', noTelp: '0895340079534', address: 'Subang'},
   ];
 
   return (
@@ -68,7 +68,7 @@ const Dashboard = () => {
                     <Title>Master Nasabah</Title>
                   </Grid>
                   <Grid item xs={6} md={6} alignContent={'end'}>
-                      <Button href="/trash/new" variant="contained" sx={{float: 'right'}}>
+                      <Button href="/customer/new" variant="contained" sx={{float: 'right'}}>
                         Tambah Data
                       </Button>
                   </Grid>

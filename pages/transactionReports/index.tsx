@@ -24,7 +24,29 @@ const Item = styled(Paper)(({ theme }) => ({
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'date', headerName: 'Tanggal', width: 190 },
     { field: 'name', headerName: 'Nama Sampah', width: 190 },
-    { field: 'heavy', headerName: 'Berat Sampah', width: 190 },
+    { field: 'heavy', headerName: 'Berat Sampah/KG', width: 190 },
+    { field: 'total', headerName: 'Total', width: 190 },
+    {
+      field: 'action',
+      headerName: 'Aksi',
+      description: 'This column has a value getter and is not sortable.',
+      sortable: false,
+      width: 160,
+      renderCell: (params) => {
+        return (
+          <React.Fragment>
+            <EditOutlined />
+            <DeleteOutline />
+          </React.Fragment>
+        )
+      }
+    },
+  ];
+  const columns2: GridColDef[] = [
+    { field: 'id', headerName: 'ID', width: 70 },
+    { field: 'date', headerName: 'Tanggal', width: 190 },
+    { field: 'name', headerName: 'Nama Sampah', width: 190 },
+    { field: 'heavy', headerName: 'Berat Sampah/KG', width: 190 },
     { field: 'total', headerName: 'Total', width: 190 },
     {
       field: 'action',
@@ -44,15 +66,25 @@ const Item = styled(Paper)(({ theme }) => ({
   ];
       
   const rows = [
-    { id: 1, date: 'Snow', name: 'Jon@email.com', heavy:'', total:''},
-    { id: 2, date: 'Lannister', name: 'Cersei@email.com', heavy:'', total:''},
-    { id: 3, date: 'Lannister', name: 'Jaime@email.com', heavy:'', total:'' },
-    { id: 4, date: 'Stark', name: 'Arya@email.com', heavy: '', total:''},
-    { id: 5, date: 'Targaryen', name: 'Daenerys@email.com', heavy:'', total:''},
-    { id: 6, date: 'Melisandre', name: 'Pikki@email.com', heavy:'', total:''},
-    { id: 7, date: 'Clifford', name: 'Ferrara@email.com', heavy:'', total:''},
-    { id: 8, date: 'Frances', name: 'Rossini@email.com', heavy:'', total:' '},
-    { id: 9, date: 'Roxie', name: 'Harvey@email.com', heavy: '', total: ''},
+    { id: 1, date: 'Saturday, 10 June, 2023', name: 'Snow', heavy:'10', total:'13.00'},
+    { id: 2, date: 'Saturday, 10 June, 2023', name: 'Lannister', heavy:'15', total:'13.000'},
+    { id: 4, date: 'Saturday, 10 June, 2023', name: 'Arya', heavy: '4', total:'13.000'},
+    { id: 5, date: 'Saturday, 10 June, 2023', name: 'Daenerys', heavy:'8', total:'13.000'},
+    { id: 6, date: 'Saturday, 10 June, 2023', name: 'Pikki', heavy:'7', total:'13.000'},
+    { id: 7, date: 'Saturday, 10 June, 2023', name: 'Ferrara', heavy:'3', total:'13.000'},
+    { id: 8, date: 'Saturday, 10 June, 2023', name: 'Rossini', heavy:'4', total:'13.000'},
+    { id: 9, date: 'Saturday, 10 June, 2023', name: 'Harvey@', heavy: '1', total: '13.000'},
+  ];
+
+  const rows2 = [
+    { id: 1, date: 'Saturday, 10 June, 2023', name: 'Snow', heavy:'10', total:'13.00'},
+    { id: 2, date: 'Saturday, 10 June, 2023', name: 'Lannister', heavy:'15', total:'13.000'},
+    { id: 4, date: 'Saturday, 10 June, 2023', name: 'Arya', heavy: '4', total:'13.000'},
+    { id: 5, date: 'Saturday, 10 June, 2023', name: 'Daenerys', heavy:'8', total:'13.000'},
+    { id: 6, date: 'Saturday, 10 June, 2023', name: 'Pikki', heavy:'7', total:'13.000'},
+    { id: 7, date: 'Saturday, 10 June, 2023', name: 'Ferrara', heavy:'3', total:'13.000'},
+    { id: 8, date: 'Saturday, 10 June, 2023', name: 'Rossini', heavy:'4', total:'13.000'},
+    { id: 9, date: 'Saturday, 10 June, 2023', name: 'Harvey@', heavy: '1', total: '13.000'},
   ];
 
   return (
@@ -77,6 +109,33 @@ const Item = styled(Paper)(({ theme }) => ({
               <DataGrid
                 rows={rows}
                 columns={columns}
+                initialState={{
+                    pagination: {
+                        paginationModel: { page: 0, pageSize: 5 },
+                    },
+                }}
+                pageSizeOptions={[5, 10]}
+                checkboxSelection={true}
+              />
+            </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+              <Box sx={{ flexGrow: 1 }} marginBottom={'20'}>
+                <Grid container spacing={2}>
+                  <Grid item xs={6} md={6}>
+                    <Title>Laporan Lelang Sampah</Title>
+                  </Grid>
+                  <Grid item xs={6} md={6} alignContent={'end'}>
+                      <Button href="/trash/new" variant="contained" sx={{float: 'right'}}>
+                        Buat Laporan
+                      </Button>
+                  </Grid>
+                </Grid>
+              </Box>
+              <DataGrid
+                rows={rows2}
+                columns={columns2}
                 initialState={{
                     pagination: {
                         paginationModel: { page: 0, pageSize: 5 },

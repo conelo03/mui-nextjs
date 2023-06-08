@@ -67,7 +67,7 @@ const Dashboard = () => {
                     <Title>Kelola Jadwal</Title>
                   </Grid>
                   <Grid item xs={6} md={6} alignContent={'end'}>
-                      <Button href="/trash/new" variant="contained" sx={{float: 'right'}}>
+                      <Button href="/schedule/new" variant="contained" sx={{float: 'right'}}>
                         Tambah Data
                       </Button>
                   </Grid>
